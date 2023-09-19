@@ -1,18 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'dart:io';
 
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-extension FontWeightExt on FontWeight {
-  static const FontWeight light = FontWeight.w300;
-  static const FontWeight regular = FontWeight.w400;
-  static FontWeight medium =
-      Platform.isAndroid ? FontWeight.w600 : FontWeight.w500;
-  static const FontWeight semibold = FontWeight.w600;
-  static const FontWeight bold = FontWeight.w700;
-}
+import '../constants/constants.dart';
 
 const primaryColor = Color(0XFF4536A0);
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shared_app/state/app.dart';
@@ -8,8 +7,9 @@ import 'package:shared_app/common/common.dart';
 import 'package:shared_app/utils/utils.dart';
 import 'package:shared_app/widgets/cornerd_box.dart';
 import 'package:shared_app/widgets/input/input.dart';
-import 'package:shared_app/widgets/search/search.dart';
 import 'package:shared_app/widgets/token_icon/token_icon.dart';
+
+import '../../constants/constants.dart';
 
 class SelectTokenWidget extends StatefulWidget {
   final Function(TokenInfo token) onChange;
