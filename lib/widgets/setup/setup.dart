@@ -30,9 +30,9 @@ class SetupPage extends StatelessWidget {
             "you haven't added any wallets yet".tr,
           ).fontWeight(FontWeightExt.semibold).fontSize(16),
           const SizedBox(height: 108),
-          BlockButton(text: "创建钱包".tr, onPressed: onCreate),
+          BlockButton(text: "创建钱包".tr, onPressed: onCreate, gradient: true),
           const SizedBox(height: 35),
-          BlockButton(text: "导入钱包".tr, onPressed: onImport),
+          BlockButton(text: "导入钱包".tr, onPressed: onImport, gradient: true),
         ],
       ),
     );

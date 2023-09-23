@@ -245,6 +245,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 30.sp,
                       ),
                       BlockButton(
+                        gradient: true,
                         text: "解锁".tr,
                         onPressed: () {
                           if (textController.text == app.password.value) {
