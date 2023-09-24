@@ -62,8 +62,8 @@ class _WalletTabsState extends State<WalletTabs> {
         elevation: 0,
         initialActiveIndex: currentPage,
         count: widget.names.length,
-        curveSize: 0,
-        top: 0,
+        curveSize: widget.isCurve ? null : 0,
+        // top: 0,
         backgroundColor: Colors.white,
         itemBuilder: TabBuilder(names: widget.names, labels: widget.labels),
         onTap: _onItemTapped,
@@ -95,11 +95,8 @@ class TabBuilder extends DelegateBuilder {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(
-          height: 30,
-          child: Image(
-            image: AssetImage(url),
-          ),
+        Image(
+          image: AssetImage(url),
         ),
         if (labels != null)
           Text(
