@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 enum TransactionType {
   token,
   nft,
@@ -68,4 +70,46 @@ class TransactionInfo {
     required this.date,
     required this.gas,
   });
+}
+
+class NFT {
+  final String chain;
+
+  final int id;
+
+  final String address;
+
+  final String dns;
+
+  final String image;
+
+  final String name;
+
+  final String owner;
+
+  final String collectionName;
+
+  final String collectionAddress;
+
+  final String description;
+
+  NFT({
+    this.chain = 'ton',
+    required this.dns,
+    required this.name,
+    required this.owner,
+    required this.id,
+    required this.address,
+    required this.description,
+    required this.image,
+    required this.collectionName,
+    required this.collectionAddress,
+  });
+}
+
+String getTransactionTypeText(TransactionType type) {
+  if (type == TransactionType.nft) {
+    return "NFT转账".tr;
+  }
+  return "通证转账".tr;
 }

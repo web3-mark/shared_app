@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:shared_app/utils/router.dart';
 import './login.dart';
 import 'package:shared_app/state/app.dart';
 import 'package:shared_app/event_bus.dart';
 import 'package:shared_app/skins/base.dart';
 
 class AppLock extends StatefulWidget {
+  final Widget Function() builder;
   final Widget child;
-  const AppLock({super.key, required this.child});
+  const AppLock({super.key, required this.child, required this.builder});
 
   @override
   State<AppLock> createState() => _AppLockState();
@@ -78,8 +80,12 @@ class _AppLockState extends State<AppLock> with WidgetsBindingObserver {
         // 禁用左滑退出
         return WillPopScope(
           onWillPop: () async => false,
-          child: const AppTheme(
-            child: LoginPage(),
+          child: AppTheme(
+            child: LoginPage(
+              onImport: () {
+                AppRouter.navigate(context, widget.builder());
+              },
+            ),
           ),
         );
       },
