@@ -15,7 +15,7 @@ class TokenIcon extends StatelessWidget {
       width: s,
       child: token.logo == null
           ? const Image(
-              image: AssetImage("assets/wallet/iton.png"),
+              image: AssetImage("assets/wallet/bnb.png"),
             )
           : ClipRRect(
               borderRadius: BorderRadius.circular(s),

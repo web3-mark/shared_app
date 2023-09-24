@@ -99,7 +99,6 @@ class _InputWidgetState extends State<InputWidget> {
     return FormBuilderField(
       name: name,
       validator: widget.validator,
-      // onChanged: () {},
       builder: (FormFieldState<dynamic> field) {
         var decoration = BoxDecoration(
           borderRadius: BorderRadius.circular(widget.raidus),
@@ -120,7 +119,6 @@ class _InputWidgetState extends State<InputWidget> {
           );
         }
 
-        // final isFocuse = state.;
         return Container(
           padding: widget.padding ??
               EdgeInsets.only(
