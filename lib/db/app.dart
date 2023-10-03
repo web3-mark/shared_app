@@ -20,8 +20,9 @@ getWalletsFromDB() async {
 /// 保存钱包, 并更新weight
 saveWalletToDB(String secret, Map<String, dynamic> json) async {
   // final db = await LocalDB.instance.database;
-  Map<String, dynamic> row = {"secret": secret};
+  Map<String, dynamic> row = {};
   row.addAll(json);
+  row['secret'] = secret;
   int id = await db.insert(TableName, row);
   await setCurrentWallet(id);
   await LoadWallets();
