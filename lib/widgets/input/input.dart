@@ -132,7 +132,7 @@ class _InputWidgetState extends State<InputWidget> {
             clipBehavior: Clip.none,
             children: [
               FormBuilderTextField(
-                key: key,
+                // key: key,
                 name: widget.name,
                 focusNode: focus,
                 controller: widget.controller,
