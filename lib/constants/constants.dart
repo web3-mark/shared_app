@@ -19,6 +19,7 @@ final RegExp passwordRegExp = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$');
 const defaultCurrency = 'USD';
 
 const interalVersion = 1;
+
 const versionCode = "1.0.0";
 
 enum Language {
@@ -66,4 +67,13 @@ enum Currency {
     }
     return USD;
   }
+}
+
+/// 加载状态
+enum LoadingStatus {
+  none,
+  loading,
+  refreshing,
+  error,
+  complete,
 }

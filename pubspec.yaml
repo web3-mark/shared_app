@@ -17,6 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_form_builder: ^9.1.0
+  flutter_injected_web3: ^1.0.1
   flutter_screenutil: ^5.9.0
   form_builder_validators: ^9.0.0
   get: ^4.6.5
