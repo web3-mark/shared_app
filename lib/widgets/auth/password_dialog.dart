@@ -1,5 +1,6 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,11 +14,13 @@ import 'package:shared_app/widgets/password_visible/password_visible.dart';
 
 class PasswordDialog extends StatefulWidget {
   final String description, title;
+  final DeviceOrientation orientation;
 
   PasswordDialog({
     super.key,
     required this.title,
     required this.description,
+    this.orientation = DeviceOrientation.portraitUp,
   });
 
   final AppController app = Get.find<AppController>();
