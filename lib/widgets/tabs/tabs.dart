@@ -57,6 +57,7 @@ class _WalletTabsState extends State<WalletTabs> {
         physics: const NeverScrollableScrollPhysics(), // 禁用左右滚动
         children: widget.pages,
       ),
+      resizeToAvoidBottomInset: false,
       extendBody: true, // 扩展body到bottombar底部
       bottomNavigationBar: ConvexAppBar.builder(
         elevation: 0,

@@ -15,11 +15,12 @@ class _PasswordVisibleWidgetState extends State<PasswordVisibleWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
         widget.builder(secure),
         Positioned(
           right: 10.sp,
-          top: 12.sp,
+          // top: 12.sp,
           child: GestureDetector(
             onTap: () {
               setState(() {

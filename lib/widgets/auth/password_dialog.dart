@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shared_app/state/app.dart';
 import '../../utils/settings.dart';
+import '../dialogs/custom_dialog_normal.dart';
 import './authienticator.dart';
 import 'package:shared_app/widgets/dialogs/custom_dialog.dart';
 import 'package:shared_app/widgets/inner_box.dart';
@@ -58,6 +59,47 @@ class _PasswordDialogState extends State<PasswordDialog> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.orientation != DeviceOrientation.portraitUp) {
+      return CustomDialogBoxNormal(
+        title: widget.title,
+        description: widget.description,
+        onConfirm: () {
+          if (ctrl.text == app.password.value) {
+            // close(true);
+            Navigator.pop(context, true);
+          } else {
+            BotToast.showText(text: "密码错误".tr);
+            // close(false);
+          }
+        },
+        child: Center(
+          child: FormBuilder(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 26.0),
+                  child: InnerBox(
+                    height: 88,
+                    child: PasswordVisibleWidget(
+                      builder: (visible) {
+                        return InputWidget(
+                          controller: ctrl,
+                          obscureText: visible,
+                          placeholder: "请输入密码".tr,
+                          name: "name",
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 45),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
     return CustomDialogBox(
       title: widget.title,
       description: widget.description,
