@@ -9,7 +9,7 @@ class TokenIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = ScreenUtil().scaleWidth * size;
+    final s = ScreenUtil().scaleHeight * size;
     return SizedBox(
       height: s,
       width: s,

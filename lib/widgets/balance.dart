@@ -40,7 +40,7 @@ class BalanceWidget extends StatelessWidget {
     final Currency name = Currency.fromText(cur);
 
     return SizedBox(
-      height: 65.sp,
+      height: 66.sp,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -66,7 +66,7 @@ class BalanceWidget extends StatelessWidget {
             margin: EdgeInsets.only(right: 6.sp),
             constraints: BoxConstraints.loose(
               Size.fromWidth(
-                188.sp,
+                190.sp,
               ),
             ),
             child: Obx(() {
