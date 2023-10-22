@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'dart:typed_data';
 
-import 'package:deep_pick/deep_pick.dart';
+import 'package:flutter/material.dart';
 
 maskString(String origin, [int start = 4]) {
   if (origin.length < 10) {
@@ -80,4 +80,9 @@ class DateTimeUtils {
         .toString()
         .substring(0, 19);
   }
+}
+
+/// 推出键盘
+dismissKeyboard() {
+  FocusManager.instance.primaryFocus?.unfocus();
 }
