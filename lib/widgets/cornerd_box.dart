@@ -17,11 +17,7 @@ class CorneredBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      constraints: BoxConstraints(
-        minHeight: 500.sp,
-        minWidth: double.infinity,
-      ),
-      // height: MediaQuery.of(context).size.height,
+      constraints: height == null ? BoxConstraints.expand() : null,
       padding: EdgeInsets.symmetric(horizontal: padding),
       decoration: box2,
       child: SingleChildScrollView(

@@ -58,7 +58,6 @@ class AppController extends GetxController {
 
   setup() {
     // 获取地址类型
-
     if (loadedWallets.isNotEmpty) {
       final item = loadedWallets.where((p0) => p0['id'] == currentWallet.value);
       if (item.isNotEmpty) {
@@ -70,6 +69,8 @@ class AppController extends GetxController {
   }
 
   switchWallet(Map json) {
+    storage.remove(StoreKey.token.code);
+
     wallet_id(json['id']);
     address(json['address']);
     name(json['name']);

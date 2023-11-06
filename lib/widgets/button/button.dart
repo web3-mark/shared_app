@@ -113,3 +113,51 @@ class GradientButton extends StatelessWidget {
     );
   }
 }
+
+class GhostButton extends StatelessWidget {
+  final String text;
+  final VoidCallback? onPressed;
+  final double height;
+  final double radius;
+  final Color? color;
+  final bool gradient;
+
+  const GhostButton({
+    super.key,
+    required this.text,
+    this.onPressed,
+    this.height = 48,
+    this.radius = 24,
+    this.color,
+    this.gradient = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final decoration = BoxDecoration(
+      borderRadius: BorderRadius.circular(radius),
+      border: Border.all(color: color ?? primaryColor),
+    );
+    return GestureDetector(
+      onTap: () {
+        if (onPressed != null) {
+          onPressed!();
+        }
+      },
+      behavior: HitTestBehavior.opaque,
+      child: Container(
+        height: height,
+        width: double.infinity,
+        decoration: decoration,
+        alignment: Alignment.center,
+        child: Text(
+          text,
+          style: SemiBoldText.copyWith(
+            color: primaryColor,
+            fontSize: 16,
+          ),
+        ),
+      ),
+    );
+  }
+}

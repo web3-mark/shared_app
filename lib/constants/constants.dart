@@ -77,3 +77,14 @@ enum LoadingStatus {
   error,
   complete,
 }
+
+enum StoreKey {
+  /// 登录token
+  token("store.token"),
+
+  /// 用户ID
+  uid("store.uid");
+
+  final String code;
+  const StoreKey(this.code);
+}
