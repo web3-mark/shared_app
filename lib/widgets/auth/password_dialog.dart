@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shared_app/state/app.dart';
 import '../../utils/settings.dart';
+import '../../utils/utils.dart';
 import '../dialogs/custom_dialog_normal.dart';
 import './authienticator.dart';
 import 'package:shared_app/widgets/dialogs/custom_dialog.dart';
@@ -66,6 +67,7 @@ class _PasswordDialogState extends State<PasswordDialog> {
         onConfirm: () {
           if (ctrl.text == app.password.value) {
             // close(true);
+            dismissKeyboard();
             Navigator.pop(context, true);
           } else {
             BotToast.showText(text: "密码错误".tr);

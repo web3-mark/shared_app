@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_app/skins/base.dart';
 
+const double defaultHeight = 48;
+const double defaultRadius = 24;
+
 class BlockButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
@@ -13,8 +16,8 @@ class BlockButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
-    this.height = 48,
-    this.radius = 24,
+    this.height = defaultHeight,
+    this.radius = defaultRadius,
     this.color,
     this.gradient = false,
   });
@@ -72,8 +75,8 @@ class GradientButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
-    this.height = 48,
-    this.radius = 24,
+    this.height = defaultHeight,
+    this.radius = defaultRadius,
     this.color,
   });
 
@@ -126,8 +129,8 @@ class GhostButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
-    this.height = 48,
-    this.radius = 24,
+    this.height = defaultHeight,
+    this.radius = defaultRadius,
     this.color,
     this.gradient = false,
   });
