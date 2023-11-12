@@ -15,6 +15,7 @@ class TokenInfo {
   final double? price;
   final int decimals;
   final bool isJetton;
+  final String standard;
   double balance;
 
   TokenInfo({
@@ -26,6 +27,7 @@ class TokenInfo {
     this.wallet,
     this.price,
     this.decimals = 9,
+    this.standard = '',
     this.isJetton = false,
   });
 }
