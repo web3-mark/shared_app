@@ -12,11 +12,15 @@ class Model {
     return map.toList();
   }
 
+  find({String? where, List<Object?>? whereArgs}) async {
+    return await db.query(table.name, where: where, whereArgs: whereArgs);
+  }
+
   save(Map<String, dynamic> data) async {
     return await db.insert(table.name, data);
   }
 
-  delete(String? where) async {
-    return await db.delete(table.name, where: where);
+  delete({String? where, List<Object?>? whereArgs}) async {
+    return await db.delete(table.name, where: where, whereArgs: whereArgs);
   }
 }

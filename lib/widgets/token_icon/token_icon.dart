@@ -10,6 +10,7 @@ class TokenIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = ScreenUtil().scaleHeight * size;
+
     return SizedBox(
       height: s,
       width: s,
@@ -17,14 +18,16 @@ class TokenIcon extends StatelessWidget {
           ? const Image(
               image: AssetImage("assets/wallet/bnb.png"),
             )
-          : ClipRRect(
-              borderRadius: BorderRadius.circular(s),
-              child: Image.network(
-                token.logo!,
-                width: s,
-                height: s,
-              ),
-            ),
+          : !token.logo!.startsWith(RegExp(r'^https?://'))
+              ? const Image(image: AssetImage("assets/wallet/usdt-logo.png"))
+              : ClipRRect(
+                  borderRadius: BorderRadius.circular(s),
+                  child: Image.network(
+                    token.logo!,
+                    width: s,
+                    height: s,
+                  ),
+                ),
     );
   }
 }

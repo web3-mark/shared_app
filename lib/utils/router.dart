@@ -7,4 +7,10 @@ class AppRouter {
       CupertinoPageRoute(builder: (context) => AppTheme(child: page)),
     );
   }
+
+  // static navigateNamed(BuildContext context, String name) {
+  //   return Navigator.of(context).pushNamed(
+  //     CupertinoPageRoute(builder: (context) => AppTheme(child: page)),
+  //   );
+  // }
 }

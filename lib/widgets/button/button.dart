@@ -7,10 +7,14 @@ const double defaultRadius = 24;
 class BlockButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
+
+  /// 默认高度 48
   final double height;
   final double radius;
   final Color? color;
   final bool gradient;
+
+  final double? width;
 
   const BlockButton({
     super.key,
@@ -20,6 +24,7 @@ class BlockButton extends StatelessWidget {
     this.radius = defaultRadius,
     this.color,
     this.gradient = false,
+    this.width = double.infinity,
   });
 
   @override
@@ -50,7 +55,7 @@ class BlockButton extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       child: Container(
         height: height,
-        width: double.infinity,
+        width: width,
         decoration: decoration,
         alignment: Alignment.center,
         child: Text(
@@ -71,6 +76,8 @@ class GradientButton extends StatelessWidget {
   final double height;
   final double radius;
   final Color? color;
+  final double? width;
+
   const GradientButton({
     super.key,
     required this.text,
@@ -78,6 +85,7 @@ class GradientButton extends StatelessWidget {
     this.height = defaultHeight,
     this.radius = defaultRadius,
     this.color,
+    this.width = double.infinity,
   });
 
   @override
@@ -91,7 +99,7 @@ class GradientButton extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       child: Container(
         height: height,
-        width: double.infinity,
+        width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(radius),
           color: color ?? primaryColor,
@@ -121,6 +129,7 @@ class GhostButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
   final double height;
+  final double? width;
   final double radius;
   final Color? color;
   final bool gradient;
@@ -133,6 +142,7 @@ class GhostButton extends StatelessWidget {
     this.radius = defaultRadius,
     this.color,
     this.gradient = false,
+    this.width = double.infinity,
   });
 
   @override
@@ -150,7 +160,7 @@ class GhostButton extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       child: Container(
         height: height,
-        width: double.infinity,
+        width: width,
         decoration: decoration,
         alignment: Alignment.center,
         child: Text(
