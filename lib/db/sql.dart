@@ -35,6 +35,7 @@ CREATE TABLE "tokens" (
   "description" text,
   "publishTime" text,
   "publisher" text,
+  "show" INTEGER DEFAULT 1,
   "chain" text
 );
 CREATE TABLE "dapps" (
@@ -70,6 +71,13 @@ CREATE TABLE "settings" (
 	"id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "name" text NOT NULL,
   "value" text NOT NULL
+);
+);
+CREATE TABLE "relations" (
+	"id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "name" text NOT NULL,
+  "left" INTEGER,
+  "right" INTEGER,
 );
 CREATE TABLE "networks" (
 	"id" INTEGER PRIMARY KEY AUTOINCREMENT,
