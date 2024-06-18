@@ -18,16 +18,17 @@ class TokenIcon extends StatelessWidget {
           ? const Image(
               image: AssetImage("assets/wallet/bnb.png"),
             )
-          : !token.logo!.startsWith(RegExp(r'^https?://'))
-              ? const Image(image: AssetImage("assets/wallet/usdt-logo.png"))
-              : ClipRRect(
-                  borderRadius: BorderRadius.circular(s),
-                  child: Image.network(
-                    token.logo!,
-                    width: s,
-                    height: s,
-                  ),
-                ),
+          : ClipRRect(
+              borderRadius: BorderRadius.circular(s),
+              child: !token.logo!.startsWith(RegExp(r'^https?://'))
+                  ? const Image(
+                      image: AssetImage("assets/wallet/usdt-logo.png"))
+                  : Image.network(
+                      token.logo!,
+                      width: s,
+                      height: s,
+                    ),
+            ),
     );
   }
 }
