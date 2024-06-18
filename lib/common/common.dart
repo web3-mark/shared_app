@@ -20,7 +20,7 @@ class TokenInfo {
 
   TokenInfo({
     this.logo,
-    this.balance = 0,
+    this.balance = 0.0,
     this.symbol = "TON",
     this.name = "TON",
     this.address = "",
@@ -31,13 +31,14 @@ class TokenInfo {
     this.isJetton = false,
   });
 
-  Map toJons() {
+  Map toJson() {
     return {
       "address": address,
       "decimals": decimals,
       "symbol": symbol,
       "name": name,
       "wallet": wallet,
+      "logo": logo,
       "balance": balance,
     };
   }
