@@ -4,6 +4,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import './sql.dart';
 
+export "./model.dart";
 export './app.dart';
 export "./tables.dart";
 

@@ -30,6 +30,17 @@ class TokenInfo {
     this.standard = '',
     this.isJetton = false,
   });
+
+  Map toJons() {
+    return {
+      "address": address,
+      "decimals": decimals,
+      "symbol": symbol,
+      "name": name,
+      "wallet": wallet,
+      "balance": balance,
+    };
+  }
 }
 
 class TransactionInfo {

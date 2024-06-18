@@ -12,7 +12,7 @@ class Model {
     return map.toList();
   }
 
-  find({String? where, List<Object?>? whereArgs}) async {
+  Future<List> find({String? where, List<Object?>? whereArgs}) async {
     return await db.query(table.name, where: where, whereArgs: whereArgs);
   }
 

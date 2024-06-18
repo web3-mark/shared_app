@@ -2,9 +2,12 @@
 typedef EventCallback = void Function(Map? arg);
 
 enum Events {
-  ChangWallet,
+  ChangeWallet,
+  TokenUpdate,
   Transfer,
   Unlock,
+  Naviagte,
+  Pop,
 }
 
 class EventBus {
