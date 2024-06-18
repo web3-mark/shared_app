@@ -23,4 +23,13 @@ class Model {
   delete({String? where, List<Object?>? whereArgs}) async {
     return await db.delete(table.name, where: where, whereArgs: whereArgs);
   }
+
+  update({
+    required String where,
+    required Map<String, dynamic> data,
+    List<Object?>? whereArgs,
+  }) async {
+    return await db.update(table.name, data,
+        where: where, whereArgs: whereArgs);
+  }
 }
