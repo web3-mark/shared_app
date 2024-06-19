@@ -151,7 +151,7 @@ class _SelectTokenWidgetState extends State<SelectTokenWidget> {
                                   ],
                                 ),
                                 const Spacer(),
-                                if (token.wallet == widget.current.wallet)
+                                if (token.address == widget.current.address)
                                   const Padding(
                                     padding: EdgeInsets.only(top: 8.0),
                                     child: Image(

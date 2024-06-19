@@ -93,7 +93,7 @@ class NFT {
 
   final String address;
 
-  final String dns;
+  final String? dns;
 
   final String image;
 
@@ -103,13 +103,13 @@ class NFT {
 
   final String collectionName;
 
-  final String collectionAddress;
+  final String? collection_logo;
 
   final String description;
 
   NFT({
     this.chain = 'ton',
-    required this.dns,
+    this.dns,
     required this.name,
     required this.owner,
     required this.id,
@@ -117,7 +117,31 @@ class NFT {
     required this.description,
     required this.image,
     required this.collectionName,
-    required this.collectionAddress,
+    this.collection_logo,
+  });
+
+  static NFT fromJson(Map data) {
+    return NFT(
+      name: data['normalized_metadata']["name"] ?? '',
+      owner: data['owner_of'],
+      id: data['token_id'],
+      address: data['token_address'],
+      description: "description",
+      image: data['collection_logo'],
+      collectionName: data['name'],
+    );
+  }
+}
+
+class NftCollection {
+  final String name;
+  final String logo;
+  final List<NFT> nfts;
+
+  NftCollection({
+    required this.name,
+    required this.logo,
+    required this.nfts,
   });
 }
 
