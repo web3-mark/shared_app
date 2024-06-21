@@ -6,12 +6,14 @@ class CorneredBox extends StatelessWidget {
   final double? height;
   final double radius;
   final double padding;
+  final bool scorll;
   const CorneredBox({
     Key? key,
     required this.child,
     this.height,
     this.radius = 30,
     this.padding = 16,
+    this.scorll = true,
   }) : super(key: key);
 
   @override
@@ -21,9 +23,11 @@ class CorneredBox extends StatelessWidget {
       constraints: height == null ? const BoxConstraints.expand() : null,
       padding: EdgeInsets.symmetric(horizontal: padding),
       decoration: box2.copyWith(borderRadius: BorderRadius.circular(radius)),
-      child: SingleChildScrollView(
-        child: child,
-      ),
+      child: scorll
+          ? SingleChildScrollView(
+              child: child,
+            )
+          : child,
     );
   }
 }

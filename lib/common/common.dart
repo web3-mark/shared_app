@@ -6,6 +6,10 @@ enum TransactionType {
   coin,
 }
 
+String parseIpfsUrl(String url) {
+  return url.replaceFirst(RegExp(r'^ipfs://'), 'https://ipfs.io/ipfs/');
+}
+
 class TokenInfo {
   final String? logo;
   final String symbol;
@@ -89,45 +93,46 @@ class TransactionInfo {
 class NFT {
   final String chain;
 
-  final int id;
+  final String id;
 
   final String address;
 
+  final String owner;
+
   final String? dns;
 
-  final String image;
+  final String? image;
 
-  final String name;
-
-  final String owner;
+  final String? name;
 
   final String collectionName;
 
   final String? collection_logo;
 
-  final String description;
+  final String? description;
 
   NFT({
     this.chain = 'ton',
     this.dns,
-    required this.name,
-    required this.owner,
+    this.name,
+    this.image,
+    this.description,
     required this.id,
+    required this.owner,
     required this.address,
-    required this.description,
-    required this.image,
     required this.collectionName,
     this.collection_logo,
   });
 
   static NFT fromJson(Map data) {
     return NFT(
-      name: data['normalized_metadata']["name"] ?? '',
+      name: data['normalized_metadata']["name"],
       owner: data['owner_of'],
       id: data['token_id'],
       address: data['token_address'],
-      description: "description",
-      image: data['collection_logo'],
+      description: data['normalized_metadata']["description"],
+      image: parseIpfsUrl(
+          data['normalized_metadata']["image"] ?? data['collection_logo']),
       collectionName: data['name'],
     );
   }
@@ -136,11 +141,13 @@ class NFT {
 class NftCollection {
   final String name;
   final String logo;
+  final String address;
   final List<NFT> nfts;
 
   NftCollection({
     required this.name,
     required this.logo,
+    required this.address,
     required this.nfts,
   });
 }

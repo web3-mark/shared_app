@@ -147,7 +147,7 @@ class _SelectTokenWidgetState extends State<SelectTokenWidget> {
                                     SizedBox(
                                       height: 9.sp,
                                     ),
-                                    Text("${maskString(token.wallet ?? '')}")
+                                    Text("${maskString(token.address ?? '')}")
                                   ],
                                 ),
                                 const Spacer(),
